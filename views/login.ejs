@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Log In</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Log In</h1>
+    <div class="form-container">
+      <form id="userForm" action="/login" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
+          <span class="correct"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="8"
+            required
+          />
+          <span class="correct"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <!-- Hidden PIN Field (only for Admin) -->
+        <div class="form-group hidden" id="pin-group">
+          <label for="pin">Admin PIN</label>
+          <input type="number" max="9999" id="pin" name="pin" />
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <p>Don't have an account? <a href="/register.ejs">Register</p>
+    </div>
+
+    <script src="/stylesheets/javascripts/script.js"></script>
+  </body>
+</html>
