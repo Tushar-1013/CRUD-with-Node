@@ -13,6 +13,14 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+
+    adminname: {
+        type: String,
+        required: function () {
+            return this.role === "user"; // Only required if role is Admin
+        },
+
+    },
     role: {
         type: String,
         enum: {
@@ -20,6 +28,9 @@ const userSchema = mongoose.Schema({
             message: `{VALUE} is not a valid role`
         },
         default: "user",
+    },
+    pin: {
+        type: String,
     }
 })
 

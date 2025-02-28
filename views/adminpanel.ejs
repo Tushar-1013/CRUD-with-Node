@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link href="/stylesheets/styless.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Admin Name -->
+      <div class="admin-name">Admin name: Arun Suthar</div>
+
+      <!-- Usernames List -->
+      <div class="user-list">
+        <div class="user">
+          <span>arunsuthar119</span>
+          <button class="pending-btn" onclick="toggleDropdown(1)">
+            Pending
+          </button>
+          <div id="dropdown-1" class="dropdown">
+            <select multiple onchange="calculateTotal(1)">
+              <option value="10">Laptop - $10</option>
+              <option value="20">Mouse - $20</option>
+              <option value="30">Keyboard - $30</option>
+            </select>
+            <div class="total">Total: $<span id="total-1">0</span></div>
+            <button class="accept-btn" onclick="acceptPayment(1)">
+              Accept Payment
+            </button>
+            <button class="decline-btn" onclick="declinePayment(1)">
+              Decline Payment
+            </button>
+          </div>
+        </div>
+
+        <div class="user">
+          <span>rahulkamat19</span>
+          <button class="pending-btn" onclick="toggleDropdown(2)">
+            Pending
+          </button>
+          <div id="dropdown-2" class="dropdown">
+            <select multiple onchange="calculateTotal(2)">
+              <option value="10">AC - $10</option>
+              <option value="20">Television - $20</option>
+              <option value="30">Printer - $30</option>
+            </select>
+            <div class="total">Total: $<span id="total-2">0</span></div>
+            <button class="accept-btn" onclick="acceptPayment(2)">
+              Accept Payment
+            </button>
+            <button class="decline-btn" onclick="declinePayment(2)">
+              Decline Payment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/stylesheets/javascripts/admin.js"></script>
+  </body>
+</html>

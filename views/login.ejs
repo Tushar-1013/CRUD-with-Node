@@ -30,16 +30,16 @@
 
         <div class="form-group">
           <label for="role">Role</label>
-          <select id="role" name="role">
+          <select id="role" name="role" onchange="togglePinField()">
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
         </div>
 
         <!-- Hidden PIN Field (only for Admin) -->
-        <div class="form-group hidden" id="pin-group">
+        <div class="form-group hidden" id="pin-group" >
           <label for="pin">Admin PIN</label>
-          <input type="number" max="9999" id="pin" name="pin" />
+          <input type="password" minlength="4" maxlength="4" id="pin" name="pin" />
         </div>
 
         <button type="submit" class="btn">Submit</button>
